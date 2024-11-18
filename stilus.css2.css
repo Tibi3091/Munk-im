@@ -1,0 +1,208 @@
+.card-wrapper {
+    height: 250px;
+    perspective: 1000px;
+}
+
+@media only screen and (max-width: 576px) {
+    .card-wrapper {
+        height: 350px;
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-wrapper:hover .content {
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+
+.face-front,
+.face-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.face-back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-color:#2b2f4b;
+    color: #fff;
+}
+
+header #particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+header .info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    height: 100vh;
+}
+
+header .info-text h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+}
+
+header .info-text h3 {
+    font-size: 1.5rem;
+}
+
+header .info-text .scroll {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    color: #fff;
+    transform: translate(0, -50%);
+    transition: all 0.5s;
+}
+
+header .info-text .scroll:hover {
+    opacity: 0.7;
+}
+
+header .info-text .scroll::before {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    z-index: -1;
+    content: '';
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    15%,
+    45% {
+        opacity: 1;
+    }
+
+    60% {
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+        opacity: 0;
+    }
+}
+
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2b2f4b;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 16px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.navbar{
+    background-color: #2b2f4b;
+    z-index: 4999;
+}
+
+.hambbar{
+    border: 1px white solid;
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin-bottom: 4px;
+    border-radius: 10px;
+}
+
+.top{
+    margin-top: 4px;
+}
+
+body{
+    background-color: #2b2f4b;
+}
+
+.card{
+    background-color: #2b2f4b;
+}
+
+.face-back{
+    border: 1px solid #ffffff;
+}
+
+.shadow{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.card-body .btn{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.card-body .btn:hover{
+    border: white solid 1px;
+}
+
+#toastdiv{
+    height: 100vh;
+    width: 100%;
+    z-index: 5000;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #2b2f4be9;
+    color: black;
+}
+
+.toast{
+    height: fit-content;
+}
+
+.toast-body img{
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 100%;
+}
+
+.toast-body .info{
+    text-align: center;
+}
+
+.toast-body{
+    display: inline-flex;
+    justify-content: center;
+    padding: 20px;
+}
